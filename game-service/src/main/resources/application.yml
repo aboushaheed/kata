@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: ${KAFKA_TOPIC}
+        input:
+          destination: ${KAFKA_TOPIC}
+      kafka:
+        binder:
+          brokers: ${KAFKA_HOST}
+  profiles:
+    active: dev
